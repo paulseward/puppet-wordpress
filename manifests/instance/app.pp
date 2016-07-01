@@ -64,7 +64,7 @@ define wordpress::instance::app (
   }
   
   ## tar.gz. file name lang-aware
-  if $wp_lang {
+  if $wp_lang != '' {
     $install_file_name = "wordpress-${version}-${wp_lang}.tar.gz"
   } elsif $version == 'latest' {
     $install_file_name = "${version}.tar.gz"
